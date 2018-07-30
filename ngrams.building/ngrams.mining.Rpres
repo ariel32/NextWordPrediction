@@ -3,6 +3,7 @@ Description of NextWordPrediction App
 author: Cherubael
 date: 31 July 2018
 autosize: true
+transition: zoom
 
 Introduction
 ========================================================
@@ -50,7 +51,6 @@ If the length of the sentence is not sufficient, or if it is not possible to sug
 
 Common view of application
 ========================================================
-Bla-bla-bla
 ![title](applicatoin.view.jpg)
 
 Conclusion
