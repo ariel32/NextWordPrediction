@@ -27,13 +27,7 @@ N-grams mining over all datasets
 ========================================================
 As a result, I went through the entire data set, selecting portions of 1000 vectors at a time. All N-grams were saved, minus those whose frequency was less than 1. 
 The results of processing the combined dataset for detecting bigrams, trigrams, and quadrigram are shown below.
-```{r, echo=F, fig.align="center", fig.width = 10, fig.height = 5}
-load(file = "bigrams.mined"); load(file = "trigrams.mined"); load(file = "quadrigrams.mined");
-d.mined = rbind(bigrams.mined, trigrams.mined, quadrigrams.mined)
-d.mined$ngram <- c(rep("bigram",nrow(bigrams.mined)), rep("trigram",nrow(trigrams.mined)), rep("quadrigram",nrow(quadrigrams.mined)))
-library(ggplot2)
-ggplot(d.mined, aes(x = x, y = nrow, color = ngram)) + geom_point()
-```
+<img src="ngrams.mining-figure/unnamed-chunk-1-1.png" title="plot of chunk unnamed-chunk-1" alt="plot of chunk unnamed-chunk-1" style="display: block; margin: auto;" />
 The bends of the straight line correspond to three sets of data: blogs, twits, and news.
 
 Principle of application work

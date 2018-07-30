@@ -6,3 +6,5 @@ NextWordPrediction.Rproj
 data/
 rsconnect/
 ngrams.building/ngrams.mining.Rmd*
+ngrams.building/ngrams.mining-rpubs.html
+ngrams.building/ngrams.mining-figure/
