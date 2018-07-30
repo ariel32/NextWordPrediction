@@ -22,9 +22,11 @@ shinyUI(fluidPage(
       helpText("Enter a text..."),
       textInput("inputText", "Sentence:",value = ""),
       tags$b(helpText("You can try:")),
-      helpText("I want to go"),
-      helpText("Do you know"),
-      helpText("Will we"),
+      tags$ul(
+        tags$li("I want to go"), 
+        tags$li("Do you know"), 
+        tags$li("Will we")
+      ),
       tags$a(href="http://rpubs.com/capsulaby/NextWordPrediction", "Slide Deck with Description"),
       br(),
       tags$a(href="https://github.com/ariel32/NextWordPrediction", "Application on GitHub")

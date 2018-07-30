@@ -1,4 +1,4 @@
-setwd("d:/Work/Projects/Coursera/data-science-project/capstone/NextWordPrediction")
+setwd("d:/Work/Projects/Coursera/data-science-project/capstone/NextWordPrediction/ngrams.building/")
 
 library(tm); library(dplyr); library(compare)
 BigramTokenizer     <- function(x) RWeka::NGramTokenizer(x, RWeka::Weka_control(min = 2, max = 2))
@@ -6,12 +6,12 @@ TrigramTokenizer    <- function(x) RWeka::NGramTokenizer(x, RWeka::Weka_control(
 QuadrigramTokenizer <- function(x) RWeka::NGramTokenizer(x, RWeka::Weka_control(min = 4, max = 4))
 
 
-d.blog.src <- readLines("./data/en_US.blogs.txt",   encoding="UTF-8",  skipNul = T)
-d.twit.src <- readLines("./data/en_US.twitter.txt", encoding="UTF-8",  skipNul = T)
-d.news.src <- readLines("./data/en_US.news.txt",    encoding="UTF-16", skipNul = T)
+d.blog.src <- readLines("../data/en_US.blogs.txt",   encoding="UTF-8",  skipNul = T)
+d.twit.src <- readLines("../data/en_US.twitter.txt", encoding="UTF-8",  skipNul = T)
+d.news.src <- readLines("../data/en_US.news.txt",    encoding="UTF-16", skipNul = T)
 
 d.src <- c(d.blog.src, d.twit.src, d.news.src)
-writeLines(d.src,"./data/data.src.txt")
+writeLines(d.src,"../data/data.src.txt")
 rm(d.blog.src, d.twit.src, d.news.src)
 
 if(length(dir(pattern = "*.csv|*.mined"))) {
@@ -24,7 +24,7 @@ for(x in 1:floor(length(d.src)/1e3)) {
   } else { x.start = (x-1)*1e3; x.end = x*1e3-1 }
   
   d <- d.src[x.start:x.end]
-  writeLines(d,"./data/data.txt")
+  writeLines(d,"../data/data.txt")
   
   d = gsub("can't", "can", d)
   d = gsub("n't", "", d)
@@ -49,7 +49,7 @@ for(x in 1:floor(length(d.src)/1e3)) {
   d <- gsub("^\\s+|\\s+$", "", d) # remove leading and trailing spaces
   d <- if(length(which(d == " " | d == "")) > 0) { d[-which(d == " " | d == "")] } else { d }
   
-  writeLines(d,"./data/cleaned_data.txt")
+  writeLines(d,"../data/cleaned_data.txt")
   #d = readLines("./data/cleaned_data.txt")
   
   corpus <- VCorpus(VectorSource(d))
