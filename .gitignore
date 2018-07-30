@@ -1,0 +1,8 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+NextWordPrediction.Rproj
+data/
+rsconnect/
+ngrams.building/ngrams.mining.Rmd*

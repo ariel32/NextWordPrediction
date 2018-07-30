@@ -14,7 +14,7 @@ library(shiny); library(kableExtra)
 shinyUI(fluidPage(
   
   # Application title
-  titlePanel("Text prediction app"),
+  titlePanel("NextWordPrediction app"),
   
   # Sidebar with a slider input for number of bins 
   sidebarLayout(
@@ -24,7 +24,10 @@ shinyUI(fluidPage(
       tags$b(helpText("You can try:")),
       helpText("I want to go"),
       helpText("Do you know"),
-      helpText("Will we")
+      helpText("Will we"),
+      tags$a(href="http://rpubs.com/capsulaby/NextWordPrediction", "Slide Deck with Description"),
+      br(),
+      tags$a(href="https://github.com/ariel32/NextWordPrediction", "Application on GitHub")
       ),
     # Show a plot of the generated distribution
     mainPanel(
